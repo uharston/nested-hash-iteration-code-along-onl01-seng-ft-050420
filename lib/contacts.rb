@@ -14,12 +14,12 @@ require 'pry'
   #   }
   # }
 
-def remove_strawberry(contacts)
-  contacts.each do |attribute, value|
-    value.each do |key, details|
-      if details == "strawberry"
-        details.delete
+  def remove_strawberry(contacts)
+    contacts.each do |attribute, value|
+      value.each do |key, details|
+        if details.class == Array
+          details.delete("strawberry")
+        end
       end
     end
   end
-end
